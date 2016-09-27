@@ -18,6 +18,7 @@ var side_panel_component_1 = require('./home/side-panel.component');
 var header_component_1 = require('./shared/header/header.component');
 var app_routing_1 = require("./app.routing");
 var register_component_1 = require('./home/register.component');
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,6 +27,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
                 app_routing_1.routing
             ],
             declarations: [

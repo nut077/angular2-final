@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import './rxjs-operators';
+
 @Component({
   selector: 'my-app',
   template: `
@@ -6,4 +8,5 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
   `
 })
+
 export class AppComponent { }

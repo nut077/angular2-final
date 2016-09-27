@@ -9,11 +9,13 @@ import { SidePanelComponent } from './home/side-panel.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { routing, appRoutingProviders } from "./app.routing";
 import { RegisterComponent } from './home/register.component';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     routing
   ],
   declarations: [
