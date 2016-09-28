@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loginService.sendCredentials(this.model).subscribe(
       data => {
-        localStorage.setItem('token', JSON.parse(data));
+        localStorage.setItem('token', data['_body']);
         this.loginService.sendToken(localStorage.getItem('token')).subscribe(
           data => {
             this.currentUsername = this.model.username;
