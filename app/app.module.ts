@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from "@angular/http";
 
+import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PhotoListComponent } from './home/photo-list.component';
 import { SidePanelComponent } from './home/side-panel.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { routing, appRoutingProviders } from "./app.routing";
 import { RegisterComponent } from './home/register.component';
-import {HttpModule} from "@angular/http";
+import { LoginComponent } from './home/login.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import {HttpModule} from "@angular/http";
     PhotoListComponent,
     SidePanelComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   providers: [
     appRoutingProviders

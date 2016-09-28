@@ -2,24 +2,32 @@ import { Injectable } from '@angular/core';
 import {
   Http,
   Headers,
-  Response,
-  RequestOptions
+  RequestOptions,
+  Response
 } from '@angular/http';
-
 import { Observable } from 'rxjs/observable';
-import { User } from '../models/user';
 
 @Injectable()
-export class RegisterService {
+export class LoginService {
+  token: string;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-  private registerUrl = 'http://localhost:8080/user/register';
-
-  sendUser (user: User): Observable<User[]> {
+  sendCredentials(model) {
+    let tokenUrl = 'http://localhost:8080/user/login';
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.registerUrl, user, options)
+    return this.http.post(tokenUrl, model, options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  sendToken(token) {
+    let userUrl = 'http://localhost:8080/rest/user/users';
+    let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.get(userUrl, options)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -37,4 +45,6 @@ export class RegisterService {
     console.error(errMsg); // log to console instead
     return Observable.throw(errMsg);
   }
+
+
 }

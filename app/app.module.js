@@ -11,14 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var http_1 = require("@angular/http");
+var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home/home.component');
 var photo_list_component_1 = require('./home/photo-list.component');
 var side_panel_component_1 = require('./home/side-panel.component');
 var header_component_1 = require('./shared/header/header.component');
-var app_routing_1 = require("./app.routing");
 var register_component_1 = require('./home/register.component');
-var http_1 = require("@angular/http");
+var login_component_1 = require('./home/login.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +37,8 @@ var AppModule = (function () {
                 photo_list_component_1.PhotoListComponent,
                 side_panel_component_1.SidePanelComponent,
                 header_component_1.HeaderComponent,
-                register_component_1.RegisterComponent
+                register_component_1.RegisterComponent,
+                login_component_1.LoginComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders

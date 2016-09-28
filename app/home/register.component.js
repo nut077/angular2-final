@@ -15,6 +15,7 @@ var RegisterComponent = (function () {
     function RegisterComponent(registerService) {
         this.registerService = registerService;
         this.newUser = new user_1.User();
+        this.registered = false;
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
@@ -22,6 +23,7 @@ var RegisterComponent = (function () {
         var _this = this;
         this.registerService.sendUser(this.newUser).subscribe(function (data) {
             _this.newUser = new user_1.User();
+            _this.registered = true;
         }, function (error) { return console.log(error); });
     };
     RegisterComponent = __decorate([

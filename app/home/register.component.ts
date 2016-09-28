@@ -9,6 +9,7 @@ import { RegisterService } from "../service/register.service";
 })
 export class RegisterComponent implements OnInit {
   newUser: User = new User();
+  registered: boolean = false;
   constructor(private registerService: RegisterService) { }
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.sendUser(this.newUser).subscribe(
       data => {
         this.newUser = new User();
+        this.registered = true;
       },
       error => console.log(error)
     );
