@@ -1,16 +1,22 @@
 <div class="container">
-  <form class="ui form ui grid" (ngSubmit)="onSubmit()" method="post">
-    <div class="two wide column"></div>
-    <div class="twelve wide column">
-      <div class="field">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="model.username" required>
+  <div [hidden]="loginService.checkLogin()">
+    <form class="ui form ui grid" (ngSubmit)="onSubmit()" method="post">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="model.username" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
+        </div>
+        <button type="submit" class="ui button">Submit</button>
       </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
-      </div>
-      <button type="submit" class="ui button">Submit</button>
-    </div>
-  </form>
+    </form>
+  </div>
+  <div [hidden]="!loginService.checkLogin()">
+    <h3>Logged In Successfully!</h3>
+    <h3>Welcome back, {{currentUsername}}</h3>
+  </div>
 </div>

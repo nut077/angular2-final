@@ -7,7 +7,7 @@ import {
 } from '@angular/http';
 
 import { Observable } from 'rxjs/observable';
-import { User } from '../models/user';
+import { User } from '../models/user.model';
 
 @Injectable()
 export class RegisterService {

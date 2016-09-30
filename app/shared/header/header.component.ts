@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   moduleId: module.id,
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'header.component.html'
 })
 export class HeaderComponent implements OnInit {
-  constructor() {
+  constructor(private loginService: LoginService) {
   }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    if (this.loginService.checkLogin()) {
+      this.loginService.logout()
+    }
   }
 
 }

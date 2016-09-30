@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         this.loginService.sendToken(localStorage.getItem('token')).subscribe(
           data => {
             this.currentUsername = this.model.username;
-            localStorage.setItem('currentUsername', this.model.username);
+            localStorage.setItem('currentUsername', this.currentUsername);
             this.model.username = '';
             this.model.password = '';
           }

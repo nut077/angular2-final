@@ -1,0 +1,49 @@
+<div class="container">
+  <form *ngIf="!photoAdded" class="ui form" (ngSubmit)="onSubmit()" #addPhotoForm="ngForm">
+    <div class="ui grid">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <h2 class="ui dividing header">Add Your Photo</h2>
+        <div class="filed">
+          <div class="two fields">
+            <div class="field">
+              <label>* Photo Name</label>
+              <input type="text" name="photoName" placeholder="Photo Name" [(ngModel)]="newPhoto.photoName" required/>
+            </div>
+            <div class="field">
+              <label>* Photo Title</label>
+              <input type="text" name="title" placeholder="Photo Title" [(ngModel)]="newPhoto.title" required/>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Description</label>
+          <input type="text" name="description" placeholder="Description" [(ngModel)]="newPhoto.description"/>
+        </div>
+
+        <div class="field">
+          <label>Upload Photo</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="file" (change)="uploadPhotoService.fileChangeEvent($event)"/>
+            </div>
+            <div class="field">
+              <button type="button" (click)="uploadPhotoService.upload()" class="ui mini button" style="margin-top: 0.5rem;">Upload</button>
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+        <br/>
+        <button type="submit" class="ui button">Submit</button>
+      </div>
+
+    </div>
+  </form>
+
+  <div *ngIf="photoAdded">
+    <h1>Add Photo Success!</h1>
+  </div>
+
+</div>

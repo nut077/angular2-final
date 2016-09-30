@@ -11,6 +11,8 @@ import { SidePanelComponent } from './home/side-panel.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { RegisterComponent } from './home/register.component';
 import { LoginComponent } from './home/login.component';
+import { MyAlbumComponent } from './home/my-album.component';
+import { AddPhotoComponent } from './home/add-photo.component';
 
 @NgModule({
   imports: [
@@ -26,7 +28,9 @@ import { LoginComponent } from './home/login.component';
     SidePanelComponent,
     HeaderComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    MyAlbumComponent,
+    AddPhotoComponent
   ],
   providers: [
     appRoutingProviders

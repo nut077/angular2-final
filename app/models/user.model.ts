@@ -1,4 +1,4 @@
-import { Photo } from './photo';
+import { Photo } from './photo.model';
 
 export class User {
   public userId: number;

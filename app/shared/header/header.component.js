@@ -9,10 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var login_service_1 = require('../../service/login.service');
 var HeaderComponent = (function () {
-    function HeaderComponent() {
+    function HeaderComponent(loginService) {
+        this.loginService = loginService;
     }
     HeaderComponent.prototype.ngOnInit = function () {
+    };
+    HeaderComponent.prototype.onClick = function () {
+        if (this.loginService.checkLogin()) {
+            this.loginService.logout();
+        }
     };
     HeaderComponent = __decorate([
         core_1.Component({
@@ -20,7 +27,7 @@ var HeaderComponent = (function () {
             selector: 'app-header',
             templateUrl: 'header.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [login_service_1.LoginService])
     ], HeaderComponent);
     return HeaderComponent;
 }());

@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_1 = require("../models/user");
+var user_model_1 = require("../models/user.model");
 var register_service_1 = require("../service/register.service");
 var RegisterComponent = (function () {
     function RegisterComponent(registerService) {
         this.registerService = registerService;
-        this.newUser = new user_1.User();
+        this.newUser = new user_model_1.User();
         this.registered = false;
     }
     RegisterComponent.prototype.ngOnInit = function () {
@@ -22,7 +22,7 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.onSubmit = function () {
         var _this = this;
         this.registerService.sendUser(this.newUser).subscribe(function (data) {
-            _this.newUser = new user_1.User();
+            _this.newUser = new user_model_1.User();
             _this.registered = true;
         }, function (error) { return console.log(error); });
     };
