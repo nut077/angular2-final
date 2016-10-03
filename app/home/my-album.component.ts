@@ -22,9 +22,7 @@ export class MyAlbumComponent implements OnInit {
       user => {
         this.user = user['_body'];
         this.photoService.getPhotosByUser(this.user).subscribe(
-          photos => {
-            this.photos = JSON.parse(user['_body']).photoList
-          }
+          photos => this.photos = JSON.parse(user['_body']).photoList
         ), error => console.log(error);
       }
     ), error => console.log(error);
@@ -32,7 +30,7 @@ export class MyAlbumComponent implements OnInit {
 
   onSelect(photo: Photo) {
     this.selectedPhoto = photo;
-    this.router.navigate(['ImageDetail', {id: this.selectedPhoto.photoId}]);
+    this.router.navigate(['photo-detail', this.selectedPhoto.photoId]);
   }
 
   ngOnInit() {

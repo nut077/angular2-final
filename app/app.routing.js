@@ -11,15 +11,24 @@ var my_album_component_1 = require('./home/my-album.component');
 var add_photo_component_1 = require('./home/add-photo.component');
 var upload_photo_service_1 = require('./service/upload-photo.service');
 var add_photo_service_1 = require('./service/add-photo.service');
+var photo_detail_component_1 = require('./home/photo-detail.component');
+var comment_service_1 = require('./service/comment.service');
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'register', component: register_component_1.RegisterComponent },
     { path: 'login', component: login_component_1.LoginComponent },
     { path: 'my-album', component: my_album_component_1.MyAlbumComponent },
     { path: 'add-photo', component: add_photo_component_1.AddPhotoComponent },
+    { path: 'photo-detail/:id', component: photo_detail_component_1.PhotoDetailComponent }
 ];
 exports.appRoutingProviders = [
-    register_service_1.RegisterService, login_service_1.LoginService, photo_service_1.PhotoService, user_service_1.UserService, upload_photo_service_1.UploadPhotoService, add_photo_service_1.AddPhotoService
+    register_service_1.RegisterService,
+    login_service_1.LoginService,
+    photo_service_1.PhotoService,
+    user_service_1.UserService,
+    upload_photo_service_1.UploadPhotoService,
+    add_photo_service_1.AddPhotoService,
+    comment_service_1.CommentService
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map

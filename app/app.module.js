@@ -22,6 +22,8 @@ var register_component_1 = require('./home/register.component');
 var login_component_1 = require('./home/login.component');
 var my_album_component_1 = require('./home/my-album.component');
 var add_photo_component_1 = require('./home/add-photo.component');
+var photo_detail_component_1 = require('./home/photo-detail.component');
+var photo_comment_component_1 = require('./home/photo-comment.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,7 +44,9 @@ var AppModule = (function () {
                 register_component_1.RegisterComponent,
                 login_component_1.LoginComponent,
                 my_album_component_1.MyAlbumComponent,
-                add_photo_component_1.AddPhotoComponent
+                add_photo_component_1.AddPhotoComponent,
+                photo_detail_component_1.PhotoDetailComponent,
+                photo_comment_component_1.PhotoCommentComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders

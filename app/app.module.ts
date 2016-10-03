@@ -13,6 +13,8 @@ import { RegisterComponent } from './home/register.component';
 import { LoginComponent } from './home/login.component';
 import { MyAlbumComponent } from './home/my-album.component';
 import { AddPhotoComponent } from './home/add-photo.component';
+import { PhotoDetailComponent } from './home/photo-detail.component';
+import { PhotoCommentComponent } from './home/photo-comment.component';
 
 @NgModule({
   imports: [
@@ -30,7 +32,9 @@ import { AddPhotoComponent } from './home/add-photo.component';
     RegisterComponent,
     LoginComponent,
     MyAlbumComponent,
-    AddPhotoComponent
+    AddPhotoComponent,
+    PhotoDetailComponent,
+    PhotoCommentComponent
   ],
   providers: [
     appRoutingProviders
