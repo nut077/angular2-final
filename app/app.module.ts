@@ -15,6 +15,7 @@ import { MyAlbumComponent } from './home/my-album.component';
 import { AddPhotoComponent } from './home/add-photo.component';
 import { PhotoDetailComponent } from './home/photo-detail.component';
 import { PhotoCommentComponent } from './home/photo-comment.component';
+import { PhotoRowComponent } from './home/photo-row.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { PhotoCommentComponent } from './home/photo-comment.component';
     MyAlbumComponent,
     AddPhotoComponent,
     PhotoDetailComponent,
-    PhotoCommentComponent
+    PhotoCommentComponent,
+    PhotoRowComponent
   ],
   providers: [
     appRoutingProviders

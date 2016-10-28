@@ -30,4 +30,9 @@ export class PhotoService {
     return this.http.post(url, photo, {headers: header});
   }
 
+  getPhotos() {
+    let url = 'http://localhost:8080/photo/all-photos';
+    return this.http.get(url);
+  }
+
 }

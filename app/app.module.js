@@ -24,6 +24,7 @@ var my_album_component_1 = require('./home/my-album.component');
 var add_photo_component_1 = require('./home/add-photo.component');
 var photo_detail_component_1 = require('./home/photo-detail.component');
 var photo_comment_component_1 = require('./home/photo-comment.component');
+var photo_row_component_1 = require('./home/photo-row.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,7 +47,8 @@ var AppModule = (function () {
                 my_album_component_1.MyAlbumComponent,
                 add_photo_component_1.AddPhotoComponent,
                 photo_detail_component_1.PhotoDetailComponent,
-                photo_comment_component_1.PhotoCommentComponent
+                photo_comment_component_1.PhotoCommentComponent,
+                photo_row_component_1.PhotoRowComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders
